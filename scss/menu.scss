@@ -1,0 +1,280 @@
+
+@import "utilities";
+
+.menuContent{
+    background-color: $bcg-color-1;
+    padding-top: 50px;
+    display: flex;
+    .sidebar{
+        width: 20%;
+        color: $font-color;
+        line-height: 32px;
+        margin-left: 30px;
+        .fa-leaf{
+            margin-right: 10px;
+        }
+        h4{
+            margin-bottom: 20px;
+            font-size: $font-m;
+        }
+        ul{
+            li{
+                border-bottom: 1px solid $font-color;
+                a{
+                    color: $font-color;
+                    display: block;
+                    padding: 6px;
+                    font-size: $font-s;
+                }
+                a:hover{
+                    color: #fff;
+                }
+            }
+            li:hover{
+                background-color: $font-color;
+            }
+            .clicked{
+                color: #fff;
+                background-color: $font-color;
+            }
+        }
+    }
+}
+@include pad{
+    .menuContent{
+        flex-direction: column;
+        align-items: center;
+        .sidebar{
+            display: block;
+            width: 70%;
+            margin-left: 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+}
+.menuContent{
+    .mainContent{
+        width: 80%;
+        margin-right: 50px;
+        margin-left: 20px;
+        .upperbar{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+    }    
+    .searchBar{
+        width: 60%;
+        position: relative;
+        .searchBox{
+            height: 33px;
+            width: 100%;
+            border: 2px solid $font-color;
+            background-color: $bcg-color-1;
+        }
+        .fa-search{
+            color: #fff;
+            padding: 8px;
+            text-align: center;
+            background-color: $font-color;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: .3s;
+        }
+        .fa-search:hover{
+            color: $link-color;
+        }
+    }  
+    .shoppingCart{
+        width: 30%;
+        text-align: right;
+        position: relative;
+        a{
+            color: $font-color;
+        }
+        a:hover{
+            opacity: .6; 
+        }
+        .pay{
+            padding-right: 15px;
+            display: inline-block;
+            border-right: 1px solid $font-color;
+            transition: .3s;
+        }
+        .fa-shopping-cart{
+            font-size: 27px;
+            margin-left: 15px;
+        }
+        .cartIcon{
+            transition: .3s;
+        }
+        span{
+            position: absolute;
+            background-color: $cart-color;
+            color: #fff;
+            padding: 5px;
+            font-size: 12px;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 7px;
+            right: -10px;
+            top: -8px;
+        }
+    }      
+}
+@include pad{
+    .menuContent{
+        .mainContent{
+            margin: 0;
+            .upperbar{
+                flex-direction: column;
+            }
+        }
+        .searchBar{
+            width: 82%;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .shoppingCart{
+            margin-top: 20px;
+            margin: 20px auto 0;
+            width: 80%;
+        }
+    }
+}
+.menuContent .menuCards{
+    display: flex;
+    flex-wrap: wrap;
+    .cards{
+        width: 30.33333%;
+        margin: 1%;
+        box-shadow: 3px 3px 5px rgb(146, 145, 145);
+        text-align: center;
+        color: $font-color;
+        position: relative;
+        .hotTag{
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 100px;
+            height: 80px;
+            overflow: hidden;
+        }
+        .hotTag::before{
+            position: absolute;
+            content: "";
+            display: block;
+            border: 5px solid #078F6D;
+            z-index: 9;
+            width: 10px;
+            height: 10px;
+            top: 0px;
+            right: 62px;
+        }
+        .hotTag::after{
+            position: absolute;
+            content: "";
+            display: block;
+            border: 5px solid #078F6D;
+            z-index: 9;
+            width: 10px;
+            height: 10px;
+            right: 1px;
+            top:62px;
+        }
+        .hot{
+            background: #00CC99;
+            position: absolute;
+            top: 20px;
+            right: -50px;
+            width: 160px;
+            padding: 2px 0;
+            font-size: $font-xs;
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: rotate(45deg);
+            z-index: 10;
+        }
+    }
+    .fa-heart{
+        color: #fff;
+        font-size: $font-l;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        transition: .3s;
+    }
+    .fa-heart:hover{
+        opacity: .6;
+    }
+    .heartClicked{
+        display: none;
+    }
+    .name{
+        font-size: $font-m;
+        margin-top: 15px;
+    }
+    .engName{
+        font-size: 12px;
+        margin: 8px 0;
+        position: relative;
+    }
+    .engName::after{
+        content: '';
+        width: 40%;
+        height: 1px;
+        background-color: $font-color;
+        position: absolute;
+        right: 30%;
+        top: 24px;
+    }
+    .price{
+        padding-top: 25px; 
+    }
+    .addToCart{
+        margin: 20px auto;
+        width: 80%;
+        height: 20px;
+        a{
+            padding: 5px 0;
+            display: block;
+            color: $cart-color;
+            border: 2px solid $cart-color;
+            border-radius: 3px;
+            transition: .3s;
+        }
+        a:hover{
+            color: $bcg-color-1;
+            background-color: $cart-color;
+        }
+    }
+    .fa-shopping-cart{
+        margin-right: 5px;
+        font-size: $font-xs;
+    }
+}
+@include pad{
+    .menuContent .menuCards .cards{
+        width: 48%;
+        margin: 0 1% 30px;
+    }
+}
+@include phone{
+    .menuContent .menuCards{
+        .cards{
+            width: 98%;
+            margin: 0 1% 50px;
+            box-shadow: 3px 3px 5px rgb(146, 145, 145);
+            img{
+                margin-top: 15px;
+            }
+        }
+        .fa-heart{
+            top: 24px;
+            left: 54px;
+        }
+
+    }
+}

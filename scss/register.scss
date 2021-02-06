@@ -1,0 +1,136 @@
+
+@import "utilities";
+
+/* register page start */
+.registerContent{
+    color: $font-color;
+    background: $bcg-color-1;
+    h3{
+        font-size: 49px;
+        font-family: $ff-2;
+        font-weight: bolder;
+        padding: 50px 0 5px;
+        text-align: center;
+    } 
+    h4{
+        font-size: $font-m;
+        text-align: center;
+    }
+    .registerBox{
+        max-width: 620px;
+        margin: 50px auto 0;
+        border-top: 3px solid $cart-color;
+        border-bottom: 3px solid rgba(0, 0, 0, 0.16);
+        box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+        padding: 15px;
+        h5{
+            font-size: $font-s;
+            text-align: center;
+            font-family: $ff-2;
+            font-weight: bolder;
+            margin-bottom: 15px;
+        }
+    }
+    .registerDetails{
+        display: flex;
+        justify-content: space-between;
+    }
+    .registerContract{
+        width: 48%;
+        font-size: $font-s;
+    }
+    .registerInfo{
+        width: 48%;
+        span{
+            display: block;
+            margin-bottom: 5px;
+        }
+        .emailBox,
+        .passwordBox{
+            width: 100%;
+            height: 25px;
+        }
+        .emailBox{
+            margin-bottom: 20px;
+            text-indent: 22px;
+        }
+        .passwordBox{
+            margin-bottom: 5px;
+            text-indent: 22px;
+        }
+        .email{
+            position: relative;
+            display: block;
+            .fa-envelope{
+                position: absolute;
+                font-size: $font-xs;
+                top:26px;
+                left: 5px;
+            }
+        }
+        .password{
+            position: relative;
+            display: block;
+            .lock1{
+                position: absolute;
+                font-size: $font-xs;
+                top:26px;
+                left: 5px;
+            }
+            .lock2{
+                position: absolute;
+                font-size: $font-xs;
+                top: 56px;
+                left: 5px; 
+            }
+        }
+        .toLogin{
+            font-size: $font-xs;
+            color: $cart-color;
+            transition: .3s;
+        }
+        .toLogin:hover{
+            opacity: .5;
+        }
+        .registerBtnBox{
+            background: $bcg-color-2;
+            border-radius: 3px;
+            color: #fff;
+            font-size: $font-xs;
+            border: none;
+            padding: 5px 40px;
+            margin-top: 35px;
+            transition: .3s;
+        }
+        .registerBtnBox:hover{
+            opacity: .5;
+            cursor: pointer;
+        }
+        .registerBtn{
+            text-align: right;
+            display: block;
+        }  
+    }
+}
+@include pad{
+    .registerContent .registerBox{
+        width: 85%;
+    }
+}
+@include phone{
+    .registerContent{
+        .registerDetails{
+            flex-direction: column;
+            align-items: center;
+        }
+        .registerContract{
+            width: 80%;
+            margin: 20px 0 30px;
+        }
+        .registerInfo{
+            width: 80%;
+        }
+    }
+}
+
+/* register page end */

@@ -1,0 +1,36 @@
+$bcg-color-1: #efe9e7;
+$bcg-color-2: #F56C23;
+$bcg-color-3: #f6f4f3;
+
+$link-color: rgb(241, 105, 50);
+
+$font-color: #3D1101;
+
+$cart-color: #FF5E45;
+
+$font-xs: 14px;
+$font-s: 18px;
+$font-m: 20px;
+$font-l: 24px;
+$font-xl: 36px;
+$font-xxl: 50px;
+
+$ff-1: 'Microsoft JhengHei';
+$ff-2: 'Noto Sans TC';
+
+
+@mixin pad{
+    @media (max-width: 768px){
+        @content
+    }
+}
+@mixin phone{
+    @media (max-width: 576px){
+        @content
+    }
+}
+@mixin phone-xs{
+    @media (max-width: 414px){
+        @content
+    }
+}
